@@ -7,8 +7,9 @@ module.exports = function(defaults) {
     // Add options here
   });
 
-  app.import('bower_components/foundation-sites/dist/foundation.css');
-  app.import('bower_components/foundation-sites/dist/foundation.css');
+  app.import('bower_components/semantic-ui/dist/semantic.css');
+  app.import('bower_components/semantic-ui/dist/semantic.js');
+  app.import('bower_components/font-awesome/css/font-awesome.css');
 
   return app.toTree();
 };
