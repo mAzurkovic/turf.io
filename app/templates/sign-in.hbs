@@ -1,0 +1,30 @@
+{{#if session.isAuthenticated}}
+
+  Logged in as {{session.currentUser.displayName}}
+  <button {{action "signOut"}}>Sign out</button>
+  {{outlet}}
+
+{{else}}
+<div class="ui vertical buttons">
+  <button class="ui twitter labeled icon button" {{action "signIn" "twitter"}}>
+    <i class="twitter icon"></i>
+    Sign in with Twitter
+  </button>
+
+  <button class="ui google red labeled icon button" {{action "signIn" "google"}}>
+    <i class="google icon"></i>
+    Sign in with Google
+  </button>
+
+  <button class="ui github labeled icon  button" {{action "signIn" "github"}}>
+    <i class="github icon"></i>
+    Sign in with Github
+  </button>
+
+  <button class="ui facebook labeled icon button" {{action "signIn" "facebook"}}>
+    <i class="facebook icon"></i>
+    Sign in with Facebook
+  </button>
+
+</div>
+{{/if}}
