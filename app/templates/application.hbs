@@ -1,3 +1,27 @@
-navbar placeholder
+<div class="ui top menu">
+  <a class="item">Home</a>
+  <a class="item">Browse</a>
+  <a class="item">Your Turfs</a>
+
+  <div class="right aligned item">
+
+    {{#if session.isAuthenticated}}
+
+      {{session.currentUser.displayName}}
+      <button {{action "signOut"}}>Sign out</button>
+
+    {{else}}
+
+    <div class="ui buttons">
+      {{#link-to 'sign-in'}}<button class="ui button">Sign In</button>{{/link-to}}
+      <div class="or"></div>
+      {{#link-to 'sign-up'}}<button class="ui positive button">Sign Up</button>{{/link-to}}
+    </div>
+
+    {{/if}}
+
+  </div>
+
+</div>
 
 {{outlet}}
